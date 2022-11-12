@@ -1,0 +1,37 @@
+
+.card {
+    margin: auto;
+    border-radius: 6px;
+    background: #e0e0e0;
+    box-shadow: 13px 13px 24px #bcbcbc,
+        -13px -13px 24px #ffffff;
+}
+
+.carousel {
+    margin-bottom: 10px;
+}
+
+.btn {
+    margin-right: 10px;
+}
+
+.logo {
+    width: 186px;
+    height: 174px;
+    margin-bottom: -65px;
+    margin-top: -64px;
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    height: 40px;
+}
+
+.navbardiv a {
+    color: black !important;
+}
+.user{
+    color: black !important;
+}
+
