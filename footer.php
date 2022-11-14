@@ -13,6 +13,7 @@
     <style>
       .icon1{
         font-size: 30px;
+        color: #769FCD;
       }
     </style>
 <body>

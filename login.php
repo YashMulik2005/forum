@@ -42,7 +42,7 @@
             font-size: 30px;
             margin: 10px;
             margin-top: 0px;
-            color: #2667ff;
+            color: #769FCD;
         }
         .text{
             margin: auto;

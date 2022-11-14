@@ -13,31 +13,31 @@
     <style>
    
     body{
-        background-color:#e3f1f1 !important;
+        background-color:#D6E6F2 !important;
         margin: 0px 70px !important;
     }
     .jumbotron {
      
         /* background: rgba(243, 245, 247, 0.3)!important; */
         padding: 30px;
-        background-color:white;
+        background-color:#F7FBFC;
         border-radius: 4px;
         margin: 40px 0px;
         box-shadow: 13px 13px 24px #bcbcbc,
-                -13px -13px 24px #ffffff;
+                -13px -13px 24px #e3e3e3;
        
     }
 
    .main{
         padding: 30px;
-        background-color: white;
+        background-color: #F7FBFC;
         margin: 40px 0px;
         box-shadow: 13px 13px 24px #bcbcbc,
-                -13px -13px 24px #ffffff;
+                -13px -13px 24px #e3e3e3;
        
    }
 
-    .form_p {
+    .qdiv i{
        
     }
 
@@ -51,9 +51,9 @@
         width: 100%;
         border-radius: 3px;
         margin: 28px 0px;
-        background-color: white;
+        background-color: #F7FBFC;
         box-shadow: 13px 13px 24px #bcbcbc,
-                -13px -13px 24px #ffffff;
+                -13px -13px 24px #e3e3e3;
     }
     .img{
         width: 13%;
@@ -98,6 +98,10 @@
     .user{
         width: 15%;
     }
+    .qdivicon{
+        position: relative;
+    }
+
     @media(max-width:900px) {
         body{
             margin: 0px 15px !important;
@@ -200,6 +204,12 @@
                 <hr>
               <a href="answres.php?qus_id='. $que_id .' "><h3>'. $tittle .'</h3></a>
               <pre>'. $description .'</pre>
+              <hr>
+              <div class="qdivicon">
+                 <i class="icon fa-brands fa-linkedin"></i>
+                <i class="icon fa-brands fa-linkedin"></i>
+                <i class="icon fa-brands fa-linkedin"></i>
+              </div>
             </div>
 
           </div>';
