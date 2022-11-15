@@ -25,6 +25,18 @@
       position: absolute;
       right:10px;
     }
+    .btn{
+      background-color: #1E56A0 !important;
+    }
+    .nav1{
+      background-color: #D6E4F0 !important;
+    }
+    .navbar a{
+        color: #1E56A0 !important;
+    }
+    .navbar a:hover{
+        text-decoration: underline;
+    }
     @media(max-width:950px){
       .navdiv{
         position: static;
@@ -38,7 +50,7 @@
 <body>
     <?php
   session_start();
-  echo '<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  echo '<nav class="navbar navbar-expand-lg navbar-light bg-light nav1">
   <div class="container-fluid">
   <a class="navbar-brand" href="#"><img src="logo.png" alt="" class="logo"></a>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,13 +59,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="home.php">Home</a>
+            <a class="nav-link active" aria-current="page" href="home.php"><b>Home</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#"><b>About</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="#"><b>Contact</b></a>
           </li>
         </ul>
         </div>';

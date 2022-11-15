@@ -59,7 +59,8 @@
 <body>
     <?php
     //session_start();
-    $id=$_SESSION['user_id'];
+    $id=$_GET['user_id'];
+   // $id=$_SESSION['user_id'];
    // echo $id;
     $sql="SELECT * FROM `login_system` WHERE `user_id` = $id";
     $result=mysqli_query($connect,$sql);

@@ -13,14 +13,14 @@
     <style>
    
     body{
-        background-color:#D6E6F2 !important;
+        background-color:#D6E4F0 !important;
         margin: 0px 70px !important;
     }
     .jumbotron {
      
         /* background: rgba(243, 245, 247, 0.3)!important; */
         padding: 30px;
-        background-color:#F7FBFC;
+        background-color:#F6F6F6;
         border-radius: 4px;
         margin: 40px 0px;
         box-shadow: 13px 13px 24px #bcbcbc,
@@ -30,7 +30,7 @@
 
    .main{
         padding: 30px;
-        background-color: #F7FBFC;
+        background-color: #F6F6F6;
         margin: 40px 0px;
         box-shadow: 13px 13px 24px #bcbcbc,
                 -13px -13px 24px #e3e3e3;
@@ -51,7 +51,7 @@
         width: 100%;
         border-radius: 3px;
         margin: 28px 0px;
-        background-color: #F7FBFC;
+        background-color: #F6F6F6;
         box-shadow: 13px 13px 24px #bcbcbc,
                 -13px -13px 24px #e3e3e3;
     }
@@ -196,7 +196,7 @@
 
             echo '<div class="qdiv">
             <div class="img">
-              <img src="user_logo.png" class="qimg" alt="...">
+              <a href="profile.php?user_id='.$user_id.'"><img src="user_logo.png" class="qimg" alt="..."></a>
               <p>'.$name.'</p>
             </div>
             <div class="text">

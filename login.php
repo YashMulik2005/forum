@@ -37,15 +37,19 @@
         .formbtn{
             width: 100%;
             margin: 10px 0px;
+            background-color: #163172 !important;
         }
         .icon{
             font-size: 30px;
             margin: 10px;
             margin-top: 0px;
-            color: #769FCD;
+            color: #1E56A0;
         }
         .text{
             margin: auto;
+        }
+        .modal-content{
+            background-color: #F6F6F6 !important;
         }
     </style>
 </head>

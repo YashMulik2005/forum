@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="home.css">
     <title>Hello, world!</title>
     <style>
+        body{
+            background-color: #D6E4F0 !important;
+        }
         .col-lg-4 {
             margin: 23px 0px
         }
@@ -21,7 +24,7 @@
             margin: auto;
             height: 375px;
             border-radius: 6px;
-            background: #e0e0e0;
+            background: #F6F6F6 !important;
             box-shadow: 13px 13px 24px #bcbcbc,
                 -13px -13px 24px #ffffff;
         }
@@ -80,8 +83,9 @@
         }
         .card_icon{
             font-size: 26px;
-            color: blue;
+            color: #1E56A0;
         }
+        
         @media(max-width:900px) {
             .main1 {
                 flex-direction: column;
@@ -121,7 +125,7 @@
     </div>
     <div class="container">
         <div class="heading">
-        <h2 class="text-center"> CATEGIDIRES</h2>
+            <h2 class="text-center"> CATEGIDIRES</h2>
         </div>
         <div class="row">
             <?php
