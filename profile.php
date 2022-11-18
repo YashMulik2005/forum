@@ -13,13 +13,19 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="home.css">
     <style>
+        body{
+            background-color: #D6E4F0 !important;
+        }
     .box {
         margin: 55px;
         border-radius: 0px;
-        background: #e0e0e0;
-        box-shadow: 18px 18px 36px #bebebe,
-            -18px -18px 36px #ffffff;
+        background: #F6F6F6;
+        box-shadow: 13px 13px 24px #bcbcbc,
+                -13px -13px 24px #e3e3e3;
         padding: 15px;
+        display: flex;
+        flex-direction: column;
+
     }
 
     .photo {
@@ -28,29 +34,62 @@
     }
 
     .userimg {
-        width: 40%;
+        width: 55%;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
     .userimg img {
-        width: 235px;
-        height: 235px;
+        width: 180px;
+        height: 180px;
     }
 
     .text {
-        width: 60%;
+        width: 45%;
         display: flex;
         align-items: flex-start;
         flex-direction: column;
         justify-content: center;
+        margin-left: -180px;
     }
 
     .text2 {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    .number{
+        display: flex;
+    }
+    .numbox{
+        background-color: #163172;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding: 17px;
+        margin: 15px 8px;
+        color: white;
+        border-radius: 10px;
+    }
+    @media(max-width:900px) {
+        .box{
+            margin: 10px 15px;
+        }
+        .photo{
+            flex-direction: column;
+        }
+        .userimg{
+            width: 100%;
+        }
+        .text{
+            width: 100%;
+            margin-left: 0px;
+            align-items: center;
+        }
+        .number{
+            flex-direction: column;
+        }
     }
     </style>
     <title>Hello, world!</title>
@@ -72,6 +111,14 @@
     $username=$row['username'];
     $email=$row['email'];
     $time=$row['time'];
+    $sql="SELECT COUNT(*) AS count FROM `questions` WHERE `user_id`= $id";
+    $result=mysqli_query($connect,$sql);
+    $row=mysqli_fetch_assoc($result);
+    $one = $row['count'];
+    $sql="SELECT COUNT(*) AS count FROM `answers` WHERE `user_id`= $id";
+    $result=mysqli_query($connect,$sql);
+    $row=mysqli_fetch_assoc($result);
+    $two = $row['count'];
    echo' <div class="box">
     <div class="photo">
       <div class="userimg">
@@ -85,9 +132,12 @@
     <hr>
     <div class="text2">
     <h5>Email: '.$email.'</h5>
-    <h5>Number of questions post:10</h5>
-    <h5>Number of answer post</h5>
-    <h5>Account was crated on:'.$time.'</h5>
+    <h5>Created on:'.$time.'</h5>
+    <div class="number">
+    <div class="numbox"><h5>Number of questions post<br><br>'.$one.'</h5></div>
+    <div class="numbox"><h5>Number of answer post<br><br>'.$two.'</h5></div>
+    </div>
+    <h5>Account created on:'.$time.'</h5>
     <a href="logout.php" class="btn btn-primary">log out</a>
     </div>
   </div>';}

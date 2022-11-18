@@ -11,23 +11,85 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="home.css">
     <style>
+     body{
+        background-color:#D6E4F0 !important;
+        margin: 0px 70px !important;
+    }
     .jumbotron {
-        margin: 80px;
-        margin-top: 40px;
+     
+        /* background: rgba(243, 245, 247, 0.3)!important; */
+        padding: 30px;
+        background-color:#F6F6F6;
+        border-radius: 4px;
+        margin: 40px 0px;
+        box-shadow: 13px 13px 24px #bcbcbc,
+                -13px -13px 24px #e3e3e3;
+       
     }
 
-    .main {
-        margin: 80px;
-        margin-top: 40px;
-        margin-bottom: -165px;
+   .main{
+        padding: 30px;
+        background-color: #F6F6F6;
+        margin: 40px 0px;
+        box-shadow: 13px 13px 24px #bcbcbc,
+                -13px -13px 24px #e3e3e3;
+       
+   }
+   .qdiv {
+       /* margin: 10px 80px;*/
+        padding: 10px;
+        display: flex;
+        width: 100%;
+        border-radius: 3px;
+        margin: 28px 0px;
+        background-color: #F6F6F6;
+        box-shadow: 13px 13px 24px #bcbcbc,
+                -13px -13px 24px #e3e3e3;
+    }
+    .img{
+        width: 13%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+       /* border: 2px solid black;*/
+        border-right:2px soild black;
+    }
+    .text{
+        width: 87%;
+        padding: 10px;
     }
     .qimg {
         width: 60px;
         height: 60px;
     }
 
-    .qdiv {
-        margin: 10px 80px;
+    .qdiv a {
+        font-weight: bolder;
+        text-decoration: none;
+        color: black;
+    }
+
+    .qdiv a:hover {
+        color: black;
+    }
+    .qimg {
+        width: 60px;
+        height: 60px;
+    }
+    @media(max-width:900px) {
+        body{
+            margin: 0px 15px !important;
+        }
+        .qdiv{
+            flex-direction: column;
+        }
+        .img{
+            width: 100%;
+        }
+        .text{
+            width: 100%;
+        }
     }
     </style>
     <title>Hello, world!</title>
@@ -47,9 +109,8 @@
     ?>
     <div class="jumbotron">
         <h1 class="display-4"><?php echo $title ?></h1>
-        <p class="lead"><?php echo $desc ?></p>
+        <pre class="lead"><?php echo $desc ?></pre>
         <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
         <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
     </div>
 
@@ -91,15 +152,15 @@
             $row2=mysqli_fetch_assoc($result1);
             $name=$row2['username'];
            // $sql="select * from login_system where ";
-            echo '<div class="d-flex qdiv">
-            <div class="flex-shrink-0">
+            echo '<div class="qdiv">
+            <div class="img">
               <img src="user_logo.png" class="qimg" alt="...">
               <p>'.$name.'</p>
             </div>
-            <div class="flex-grow-1 ms-3">
+            <div class="text">
               <p>'. $time .'</p>
               <hr>
-              <p>'. $description .'</p>
+              <pre>'. $description .'</pre>
             </div>
           </div>';
         }

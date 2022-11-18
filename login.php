@@ -15,7 +15,17 @@
             border-bottom: 1px solid black;
             border-radius: 0px;
             width: 92%;
+            background-color: #F6F6F6;
 
+        }
+        input[type=text]:focus,input[type=password]:focus,input[type=email]:focus{
+            background-color: #F6F6F6;
+        }
+        textarea{
+            background-color: #F6F6F6;
+        }
+        textarea:focus{
+            background-color: #F6F6F6;
         }
         .modal-body{
             display: flex;

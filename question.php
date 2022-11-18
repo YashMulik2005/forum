@@ -36,14 +36,10 @@
                 -13px -13px 24px #e3e3e3;
        
    }
+   .form_p{
+        text-align: center;
+   }
 
-    .qdiv i{
-       
-    }
-
-    h2 {
-      
-    }
     .qdiv {
        /* margin: 10px 80px;*/
         padding: 10px;
@@ -101,7 +97,12 @@
     .qdivicon{
         position: relative;
     }
-
+    textarea{
+        background-color: #F6F6F6 !important;
+    }
+    textarea:focus{
+        background-color: #F6F6F6 !important;
+    }
     @media(max-width:900px) {
         body{
             margin: 0px 15px !important;
@@ -134,7 +135,7 @@
    $cat_des=$row['description'];
    echo' <div class="jumbotron">
         <h1 class="display-4"><b>'. $cat_title. '</b></h1>
-        <p class="lead">'. $cat_des . '</p>
+        <p class="lead"><strong>'. $cat_des . '</strong></p>
         <hr class="my-4">
     </div>';
     ?>
@@ -170,7 +171,7 @@
         </div>';
     }
     else{
-        echo'<p class="form_p">For posting a question you have to login first.</p>';
+        echo'<p class="form_p"><strong>posting a question you have to login first.</strong></p><hr>';
     }
     ?>
 
@@ -216,7 +217,7 @@
         }
     }
     else{
-        echo '<p class="form_p">Post a question and start a conversation</p>';
+        echo '<p class="form_p"><strong> a question and start a conversation</strong></p>';
     }
     ?>
    <!-- <div class="ques">

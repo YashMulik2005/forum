@@ -26,7 +26,7 @@
             border-radius: 6px;
             background: #F6F6F6 !important;
             box-shadow: 13px 13px 24px #bcbcbc,
-                -13px -13px 24px #ffffff;
+                -13px -13px 24px #e3e3e3;
         }
 
         .btn1 {

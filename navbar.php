@@ -31,8 +31,8 @@
     .nav1{
       background-color: #D6E4F0 !important;
     }
-    .navbar a{
-        color: #1E56A0 !important;
+    .nav1 a{
+        color: #163172 !important;
     }
     .navbar a:hover{
         text-decoration: underline;
@@ -50,7 +50,7 @@
 <body>
     <?php
   session_start();
-  echo '<nav class="navbar navbar-expand-lg navbar-light bg-light nav1">
+  echo '<nav class="navbar navbar-expand-lg navbar-light nav1">
   <div class="container-fluid">
   <a class="navbar-brand" href="#"><img src="logo.png" alt="" class="logo"></a>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,7 +75,7 @@
        echo' <div class="collapse navbar-collapse" id="navbarSupportedContent">
        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 navdiv">
          <li class="nav-item">
-         <a href="profile.php?user_id='.$user_id.'" class="user"><img src="user_logo.png" alt="" class="ulogo"> '.$_SESSION['username'].'</a>
+         <a href="profile.php?user_id='.$user_id.'" class="user"><img src="user_logo.png" alt="" class="ulogo"><strong> '.$_SESSION['username'].'</strong></a>
          </li>
        </ul>
       </div>';
@@ -91,7 +91,7 @@
        </ul>
       </div>';
       }
-    echo '
+    echo '<hr>
     </div>
     </nav>';
 ?>
