@@ -194,11 +194,31 @@
             $result1=mysqli_query($connect,$sql1);
             $row1=mysqli_fetch_assoc($result1);
             $name=$row1['username'];
-
+            if($name==$_SESSION['username']){
             echo '<div class="qdiv">
             <div class="img">
               <a href="profile.php?user_id='.$user_id.'"><img src="user_logo.png" class="qimg" alt="..."></a>
-              <p>'.$name.'</p>
+              <p><b>YOU</b></p>
+            </div>
+            <div class="text">
+                <p><b>POSTED AT </b>'.$time.'</p>
+                <hr>
+              <a href="answres.php?qus_id='. $que_id .' "><h3>'. $tittle .'</h3></a>
+              <pre>'. $description .'</pre>
+              <hr>
+              <div class="qdivicon">
+                 <i class="icon fa-brands fa-linkedin"></i>
+                <i class="icon fa-brands fa-linkedin"></i>
+                <i class="icon fa-brands fa-linkedin"></i>
+              </div>
+            </div>
+
+          </div>';}
+          else{
+            echo '<div class="qdiv">
+            <div class="img">
+              <a href="profile.php?user_id='.$user_id.'"><img src="user_logo.png" class="qimg" alt="..."></a>
+              <p><b>'.$name.'</b></p>
             </div>
             <div class="text">
                 <p><b>POSTED AT </b>'.$time.'</p>
@@ -214,6 +234,7 @@
             </div>
 
           </div>';
+          }
         }
     }
     else{

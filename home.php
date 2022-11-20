@@ -12,10 +12,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="home.css">
+    <link href='https://fonts.googleapis.com/css?family=Asul' rel='stylesheet' />
     <title>Hello, world!</title>
     <style>
         body{
             background-color: #D6E4F0 !important;
+            font-family:Asul !important;
         }
         .col-lg-4 {
             margin: 23px 0px
@@ -28,7 +30,18 @@
             box-shadow: 13px 13px 24px #bcbcbc,
                 -13px -13px 24px #e3e3e3;
         }
-
+        .card:hover{
+            transform: scale(1.1);
+            transition: 0.7s;
+        }
+        .card:hover .card_icon{
+            display: none;
+            transition: 0.7s;
+        }
+        .card:hover .card-title{
+           text-align: center;
+            transition: 1s;
+        }
         .btn1 {
             margin-right: 10px;
         }
@@ -67,7 +80,7 @@
         .text p {
             text-align: justify;
             font-size: 18px;
-            font-weight: 700;
+            font-weight: 400;
         }
 
         .image {
@@ -142,7 +155,7 @@
                     <div class="card-body">
                     <i class="fa-solid fa-code card_icon"></i>
                     <hr>
-                        <h5 class="card-title">'.$title.'</h5>
+                        <h4 class="card-title"><b>'.$title.'</b></h4>
                         <p class="card-text">'.$description.'</p>
                         <a href="question.php?cat_id='.$id.'" class="btn btn-primary">Questions</a>
                     </div>

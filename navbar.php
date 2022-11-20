@@ -37,7 +37,7 @@
     .navbar a:hover{
         text-decoration: underline;
     }
-    @media(max-width:950px){
+    @media(max-width:1000px){
       .navdiv{
         position: static;
 

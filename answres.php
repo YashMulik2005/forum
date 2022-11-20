@@ -124,16 +124,23 @@
            $result=mysqli_query($connect,$sql);
         }
     ?>
-
+     <?php
+    if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
+       echo'
     <div class="main">
-        <form action="answres.php" method="POST">
+        <form action=" '. $_SERVER["REQUEST_URI"] .' " method="post">
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label"><b>Example textarea</B></label>
                 <textarea class="form-control" id="qdescription" rows="3" name="adescription"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-    </div>
+    </div>';
+}
+else{
+    echo'<p class="form_p"><strong>posting a question you have to login first.</strong></p><hr>';
+}
+?>
 
     <?php
         $sql="SELECT * FROM `answers` WHERE `ques_id` = $que_id";
@@ -152,10 +159,23 @@
             $row2=mysqli_fetch_assoc($result1);
             $name=$row2['username'];
            // $sql="select * from login_system where ";
+           if($name==$_SESSION['username']){
             echo '<div class="qdiv">
             <div class="img">
               <img src="user_logo.png" class="qimg" alt="...">
-              <p>'.$name.'</p>
+              <p><b>YOU</b></p>
+            </div>
+            <div class="text">
+              <p>'. $time .'</p>
+              <hr>
+              <pre>'. $description .'</pre>
+            </div>
+          </div>';}
+          else{
+            echo '<div class="qdiv">
+            <div class="img">
+              <img src="user_logo.png" class="qimg" alt="...">
+              <p><b>'.$name.'</b></p>
             </div>
             <div class="text">
               <p>'. $time .'</p>
@@ -163,6 +183,7 @@
               <pre>'. $description .'</pre>
             </div>
           </div>';
+          }
         }
     }
     else{
