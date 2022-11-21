@@ -25,14 +25,20 @@
         .card {
             margin: auto;
             height: 375px;
+            display: flex;
+            flex-direction: column;
             border-radius: 6px;
             background: #F6F6F6 !important;
+            background-image: url('cardgif.gif') !important;
+            background-size: 100% 90% !important;
+            background-repeat: no-repeat !important;
+            background-blend-mode: lighten;
             box-shadow: 13px 13px 24px #bcbcbc,
                 -13px -13px 24px #e3e3e3;
         }
         .card:hover{
             transform: scale(1.1);
-            transition: 0.7s;
+            transition: 0.6s;
         }
         .card:hover .card_icon{
             display: none;
@@ -40,7 +46,6 @@
         }
         .card:hover .card-title{
            text-align: center;
-            transition: 1s;
         }
         .btn1 {
             margin-right: 10px;
@@ -98,7 +103,12 @@
             font-size: 26px;
             color: #1E56A0;
         }
-        
+        .btn-primary:hover{
+            background-color:#3e6a9c !important;
+            transform: scale(1.1);
+            transition: 0.5s;
+            text-decoration: underline;
+        }
         @media(max-width:900px) {
             .main1 {
                 flex-direction: column;
@@ -157,7 +167,7 @@
                     <hr>
                         <h4 class="card-title"><b>'.$title.'</b></h4>
                         <p class="card-text">'.$description.'</p>
-                        <a href="question.php?cat_id='.$id.'" class="btn btn-primary">Questions</a>
+                        <a href="question.php?cat_id='.$id.'" class="card_btn btn btn-primary">Questions</a>
                     </div>
                 </div>
             </div>';

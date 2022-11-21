@@ -10,10 +10,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="home.css">
+    <link href='https://fonts.googleapis.com/css?family=Asul' rel='stylesheet' />
     <style>
      body{
         background-color:#D6E4F0 !important;
         margin: 0px 70px !important;
+        font-family:Asul !important;
     }
     .jumbotron {
      
@@ -24,9 +26,15 @@
         margin: 40px 0px;
         box-shadow: 13px 13px 24px #bcbcbc,
                 -13px -13px 24px #e3e3e3;
+        font-size: 14px !important;
        
     }
-
+    .btn-primary:hover{
+        background-color:#3e6a9c !important;
+            transform: scale(1.1);
+            transition: 0.5s;
+            text-decoration: underline;
+        }
    .main{
         padding: 30px;
         background-color: #F6F6F6;
@@ -77,6 +85,9 @@
         width: 60px;
         height: 60px;
     }
+    .form_p{
+        text-align: center;
+   }
     @media(max-width:900px) {
         body{
             margin: 0px 15px !important;
@@ -159,35 +170,21 @@ else{
             $row2=mysqli_fetch_assoc($result1);
             $name=$row2['username'];
            // $sql="select * from login_system where ";
-           if($name==$_SESSION['username']){
-            echo '<div class="qdiv">
-            <div class="img">
-              <img src="user_logo.png" class="qimg" alt="...">
-              <p><b>YOU</b></p>
-            </div>
-            <div class="text">
-              <p>'. $time .'</p>
-              <hr>
-              <pre>'. $description .'</pre>
-            </div>
-          </div>';}
-          else{
             echo '<div class="qdiv">
             <div class="img">
               <img src="user_logo.png" class="qimg" alt="...">
               <p><b>'.$name.'</b></p>
             </div>
             <div class="text">
-              <p>'. $time .'</p>
+              <p><b>POSTED AT </b>'. $time .'</p>
               <hr>
               <pre>'. $description .'</pre>
             </div>
           </div>';
-          }
         }
     }
     else{
-        echo '<p class="form_p">Post a question and start a conversation</p>';
+        echo '<p class="form_p"><b>Post a question and start a conversation</b></p>';
     }
     ?>
     

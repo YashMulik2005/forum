@@ -10,11 +10,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="home.css">
+    <link href='https://fonts.googleapis.com/css?family=Asul' rel='stylesheet' />
     <style>
    
     body{
         background-color:#D6E4F0 !important;
         margin: 0px 70px !important;
+        font-family:Asul !important;
     }
     .jumbotron {
      
@@ -27,7 +29,12 @@
                 -13px -13px 24px #e3e3e3;
        
     }
-
+    .btn-primary:hover{
+        background-color:#3e6a9c !important;
+            transform: scale(1.1);
+            transition: 0.5s;
+            text-decoration: underline;
+        }
    .main{
         padding: 30px;
         background-color: #F6F6F6;
@@ -102,6 +109,14 @@
     }
     textarea:focus{
         background-color: #F6F6F6 !important;
+    }
+    .abtn{
+        width: 100%;
+        display: flex;
+        justify-content: right;
+    }
+    .ansbtn{
+        color: white !important;
     }
     @media(max-width:900px) {
         body{
@@ -194,27 +209,7 @@
             $result1=mysqli_query($connect,$sql1);
             $row1=mysqli_fetch_assoc($result1);
             $name=$row1['username'];
-            if($name==$_SESSION['username']){
-            echo '<div class="qdiv">
-            <div class="img">
-              <a href="profile.php?user_id='.$user_id.'"><img src="user_logo.png" class="qimg" alt="..."></a>
-              <p><b>YOU</b></p>
-            </div>
-            <div class="text">
-                <p><b>POSTED AT </b>'.$time.'</p>
-                <hr>
-              <a href="answres.php?qus_id='. $que_id .' "><h3>'. $tittle .'</h3></a>
-              <pre>'. $description .'</pre>
-              <hr>
-              <div class="qdivicon">
-                 <i class="icon fa-brands fa-linkedin"></i>
-                <i class="icon fa-brands fa-linkedin"></i>
-                <i class="icon fa-brands fa-linkedin"></i>
-              </div>
-            </div>
 
-          </div>';}
-          else{
             echo '<div class="qdiv">
             <div class="img">
               <a href="profile.php?user_id='.$user_id.'"><img src="user_logo.png" class="qimg" alt="..."></a>
@@ -226,15 +221,13 @@
               <a href="answres.php?qus_id='. $que_id .' "><h3>'. $tittle .'</h3></a>
               <pre>'. $description .'</pre>
               <hr>
-              <div class="qdivicon">
-                 <i class="icon fa-brands fa-linkedin"></i>
-                <i class="icon fa-brands fa-linkedin"></i>
-                <i class="icon fa-brands fa-linkedin"></i>
+              <div class="abtn">
+              <a href="answres.php?qus_id='. $que_id .' " class="ansbtn btn btn-primary">Get Answer</a>
               </div>
             </div>
 
           </div>';
-          }
+         
         }
     }
     else{

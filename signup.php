@@ -9,8 +9,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Asul' rel='stylesheet' />
     <title>Document</title>
     <style>
+        body{
+            font-family:Asul !important;
+        }
         .box{
             display: flex;
         }
@@ -30,6 +34,11 @@
         }
         #text2{
             font-weight: 600;
+        }
+        .btn-primary:hover{
+            background-color:#3e6a9c !important;
+
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -68,7 +77,7 @@
                             <input type="password" class="form-control" id="exampleInputPassword1" name="password"
                                 placeholder="Password">
                         </div>
-                        <button type="submit" class="btn btn-primary formbtn">Submit</button>
+                        <button type="submit" class="btn btn-primary formbtn" id="formbtn">Submit</button>
                         <!-- <p id="text2">or</p> -->
                         <i class="icon fa-brands fa-google"></i>
                         <i class="icon fa-brands fa-facebook"></i>

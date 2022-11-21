@@ -12,9 +12,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="home.css">
+    <link href='https://fonts.googleapis.com/css?family=Asul' rel='stylesheet' />
     <style>
         body{
             background-color: #D6E4F0 !important;
+            font-family:Asul !important;
         }
     .box {
         margin: 55px;

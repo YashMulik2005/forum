@@ -15,12 +15,18 @@
         }
         else{
             $hash=password_hash($pass,PASSWORD_DEFAULT);
-            $sql="INSERT INTO `login_system` (`fname`, `lname`, `username`, `email`, `password`, `time`) VALUES ('$firstn', '$lastn', '$name', '$mail', '$hash', current_timestamp())";
-            $result=mysqli_query($connect,$sql);
-            if($result){
-                header("location:home.php?=signupsucess=true");
-                exit();
+            if(strlen($pass)>=8){
+                $sql="INSERT INTO `login_system` (`fname`, `lname`, `username`, `email`, `password`, `time`) VALUES ('$firstn', '$lastn', '$name', '$mail', '$hash', current_timestamp())";
+                $result=mysqli_query($connect,$sql);
+                if($result){
+                    header("location:home.php?signupsucess=true");
+                    exit();
+                }
             }
+            else{
+                echo'Password must have 8 characters';
+            }
+
         }
         header("location:home.php?signupsucess=false");
     }

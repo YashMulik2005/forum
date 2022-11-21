@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -10,12 +13,22 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="home.css">
+    <link href='https://fonts.googleapis.com/css?family=Asul' rel='stylesheet' />
     <style>
+      body{
+        font-family:Asul !important;
+      }
     .user {
         color: black;
         text-decoration: none;
         font-size: 18px;
     }
+    .btn-primary:hover{
+      background-color:#3e6a9c !important;
+            transform: scale(1.1);
+            transition: 0.5s;
+            text-decoration: underline;
+        }
 
     .ulogo {
         width: 50px;
@@ -48,9 +61,8 @@
 </head>
 
 <body>
-    <?php
-  session_start();
-  echo '<nav class="navbar navbar-expand-lg navbar-light nav1">
+  <?php
+      echo '<nav class="navbar navbar-expand-lg navbar-light nav1">
   <div class="container-fluid">
   <a class="navbar-brand" href="#"><img src="logo.png" alt="" class="logo"></a>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,7 +81,7 @@
           </li>
         </ul>
         </div>';
-        //session_start();
+        // session_start();
       if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
         $user_id=$_SESSION['user_id'];
        echo' <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -110,6 +122,7 @@ if(isset($_GET['signupsucess']) && $_GET['signupsucess']=="true"){
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
+    <script src="navbar.js"></script>
 
 </body>
 

@@ -14,24 +14,15 @@
 .btn {
     margin-right: 10px;
     background-color: #163172 !important;
-    color: black;
+    color: white;
 }
-.btn a:hover{
-    background-color: #1E56A0 !important;
-    text-decoration: underline;
-}
+
 
 .logo {
     width: 186px;
     height: 174px;
     margin-bottom: -65px;
     margin-top: -64px;
-}
-
-.footer {
-    background-color: black;
-    color: white;
-    height: 40px;
 }
 
 .navbardiv a {

@@ -21,6 +21,15 @@
       .nav a:hover{
         text-decoration: underline;
       }
+      .footer_name{
+        color:#163172 !important;
+      }
+      .btn-primary:hover{
+        background-color:#3e6a9c !important;
+            transform: scale(1.1);
+            transition: 0.5s;
+            text-decoration: underline;
+        }
     </style>
 <body>
 <?php
@@ -28,7 +37,7 @@
     <div class="container">
     <hr>
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-      <p class="col-md-4 mb-0 text-muted">© 2022 Conding Solutions</p>
+      <p class="col-md-4 mb-0 text-muted footer_name"><b>© 2022 Conding Solutions</b></p>
   
       <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
         <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
