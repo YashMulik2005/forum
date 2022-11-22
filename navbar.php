@@ -50,6 +50,10 @@
     .navbar a:hover{
         text-decoration: underline;
     }
+    .alert{
+
+      margin-bottom: 0px !important;
+    }
     @media(max-width:1000px){
       .navdiv{
         position: static;
@@ -113,8 +117,22 @@ include 'signup.php';
 
 if(isset($_GET['signupsucess']) && $_GET['signupsucess']=="true"){
   echo'
-  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
       <strong>suceessful!!</strong> Account created suceessfully, now you can login.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>';
+}
+else if(isset($_GET['Passwordlength']) && $_GET['Passwordlength']=="true"){
+echo'
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Unsuceessful!!</strong> Password must have atleast 8 characters.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>';
+}
+else if(isset($_GET['signupsucess']) && $_GET['signupsucess']=="false"){
+  echo'
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Unsuceessful!!</strong> Username already exist.
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>';
 }

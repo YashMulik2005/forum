@@ -27,14 +27,14 @@
             height: 375px;
             display: flex;
             flex-direction: column;
-            border-radius: 6px;
+            border-radius: 6px !important;
             background: #F6F6F6 !important;
             background-image: url('cardgif.gif') !important;
             background-size: 100% 90% !important;
             background-repeat: no-repeat !important;
             background-blend-mode: lighten;
-            box-shadow: 13px 13px 24px #bcbcbc,
-                -13px -13px 24px #e3e3e3;
+            box-shadow: 7px 7px 10px #a8a8a8, -7px -7px 10px #c0bfbf !important;
+                /*7px 7px 10px #a8a8a8, -7px -7px 10px #e0e0e0*/
         }
         .card:hover{
             transform: scale(1.1);
@@ -49,6 +49,9 @@
         }
         .btn1 {
             margin-right: 10px;
+        }
+        .carousel {
+            margin-bottom: 10px;
         }
 
         .logo {
@@ -71,6 +74,7 @@
             justify-content: center;
             background-color: #87bfff;
             margin: 10px 0px;
+            margin-top: 0px !important;
         }
 
         .text {

@@ -186,7 +186,7 @@
         </div>';
     }
     else{
-        echo'<p class="form_p"><strong>posting a question you have to login first.</strong></p><hr>';
+        echo'<p class="form_p"><strong>For posting a question you have to login first.</strong></p><hr>';
     }
     ?>
 
@@ -209,8 +209,48 @@
             $result1=mysqli_query($connect,$sql1);
             $row1=mysqli_fetch_assoc($result1);
             $name=$row1['username'];
-
+            if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
+            if($name==$_SESSION['username']){
             echo '<div class="qdiv">
+            <div class="img">
+              <a href="profile.php?user_id='.$user_id.'"><img src="user_logo.png" class="qimg" alt="..."></a>
+              <p><b>YOU</b></p>
+            </div>
+            <div class="text">
+                <p><b>POSTED AT </b>'.$time.'</p>
+                <hr>
+              <a href="answres.php?qus_id='. $que_id .' "><h3>'. $tittle .'</h3></a>
+              <pre>'. $description .'</pre>
+              <hr>
+              <div class="abtn">
+              <a href="answres.php?qus_id='. $que_id .' " class="ansbtn btn btn-primary">Get Answer</a>
+              </div>
+            </div>
+
+          </div>';
+            }
+            else{
+                echo '<div class="qdiv">
+                <div class="img">
+                  <a href="profile.php?user_id='.$user_id.'"><img src="user_logo.png" class="qimg" alt="..."></a>
+                  <p><b>'.$name.'</b></p>
+                </div>
+                <div class="text">
+                    <p><b>POSTED AT </b>'.$time.'</p>
+                    <hr>
+                  <a href="answres.php?qus_id='. $que_id .' "><h3>'. $tittle .'</h3></a>
+                  <pre>'. $description .'</pre>
+                  <hr>
+                  <div class="abtn">
+                  <a href="answres.php?qus_id='. $que_id .' " class="ansbtn btn btn-primary">Get Answer</a>
+                  </div>
+                </div>
+    
+              </div>';
+            }
+        }
+        else{
+                echo '<div class="qdiv">
             <div class="img">
               <a href="profile.php?user_id='.$user_id.'"><img src="user_logo.png" class="qimg" alt="..."></a>
               <p><b>'.$name.'</b></p>
@@ -225,13 +265,13 @@
               <a href="answres.php?qus_id='. $que_id .' " class="ansbtn btn btn-primary">Get Answer</a>
               </div>
             </div>
-
           </div>';
+            }
          
         }
     }
     else{
-        echo '<p class="form_p"><strong> a question and start a conversation</strong></p>';
+        echo '<p class="form_p"><strong>Post a question and start a conversation</strong></p>';
     }
     ?>
    <!-- <div class="ques">

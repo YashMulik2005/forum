@@ -141,7 +141,7 @@
     <div class="main">
         <form action=" '. $_SERVER["REQUEST_URI"] .' " method="post">
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label"><b>Example textarea</B></label>
+                <label for="exampleFormControlTextarea1" class="form-label"><b>ANSWER</B></label>
                 <textarea class="form-control" id="qdescription" rows="3" name="adescription"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -149,7 +149,7 @@
     </div>';
 }
 else{
-    echo'<p class="form_p"><strong>posting a question you have to login first.</strong></p><hr>';
+    echo'<p class="form_p"><strong>For posting a answer you have to login first.</strong></p><hr>';
 }
 ?>
 
@@ -169,22 +169,51 @@ else{
 
             $row2=mysqli_fetch_assoc($result1);
             $name=$row2['username'];
-           // $sql="select * from login_system where ";
-            echo '<div class="qdiv">
-            <div class="img">
-              <img src="user_logo.png" class="qimg" alt="...">
-              <p><b>'.$name.'</b></p>
-            </div>
-            <div class="text">
-              <p><b>POSTED AT </b>'. $time .'</p>
-              <hr>
-              <pre>'. $description .'</pre>
-            </div>
-          </div>';
+            if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
+                if($name==$_SESSION['username']){
+                        echo '<div class="qdiv">
+                        <div class="img">
+                        <img src="user_logo.png" class="qimg" alt="...">
+                        <p><b>YOU</b></p>
+                        </div>
+                        <div class="text">
+                        <p><b>POSTED AT </b>'. $time .'</p>
+                        <hr>
+                        <pre>'. $description .'</pre>
+                        </div>
+                     </div>';
+                }
+                else{
+                    echo '<div class="qdiv">
+                    <div class="img">
+                    <img src="user_logo.png" class="qimg" alt="...">
+                    <p><b>'.$name.'</b></p>
+                    </div>
+                    <div class="text">
+                    <p><b>POSTED AT </b>'. $time .'</p>
+                    <hr>
+                    <pre>'. $description .'</pre>
+                    </div>
+                 </div>';
+                }
+            }
+                else{
+                    echo '<div class="qdiv">
+                    <div class="img">
+                    <img src="user_logo.png" class="qimg" alt="...">
+                    <p><b>'.$name.'</b></p>
+                    </div>
+                    <div class="text">
+                    <p><b>POSTED AT </b>'. $time .'</p>
+                    <hr>
+                    <pre>'. $description .'</pre>
+                    </div>
+                 </div>';
+                }
         }
     }
     else{
-        echo '<p class="form_p"><b>Post a question and start a conversation</b></p>';
+        echo '<p class="form_p"><b>Post a answer and start a conversation</b></p>';
     }
     ?>
     

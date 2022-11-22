@@ -3,8 +3,7 @@
     margin: auto;
     border-radius: 6px;
     background: #e0e0e0;
-    box-shadow: 13px 13px 24px #bcbcbc,
-    -13px -13px 24px #e3e3e3;
+    box-shadow: 7px 7px 10px #a8a8a8, -7px -7px 10px #a8a8a8;
 }
 
 .carousel {
@@ -16,7 +15,6 @@
     background-color: #163172 !important;
     color: white;
 }
-
 
 .logo {
     width: 186px;

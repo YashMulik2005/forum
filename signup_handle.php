@@ -12,6 +12,7 @@
         $num=mysqli_num_rows($result);
         if($num>0){
             echo "username exist";
+            header("location:home.php?signupsucess=false");
         }
         else{
             $hash=password_hash($pass,PASSWORD_DEFAULT);
@@ -24,10 +25,8 @@
                 }
             }
             else{
-                echo'Password must have 8 characters';
+                header("location:home.php?Passwordlength=true");
             }
-
         }
-        header("location:home.php?signupsucess=false");
     }
 ?>

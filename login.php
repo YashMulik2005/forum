@@ -69,6 +69,9 @@
             background-color:#3e6a9c !important;
             text-decoration: underline;
         }
+        .formp{
+            font-size: 12px;
+        }
     </style>
 </head>
 
@@ -92,6 +95,7 @@
                             <div class="mb-3">
                                 <input type="password" class="form-control" id="exampleInputPassword1" name="password"
                                 placeholder="PASSWORD">
+                                <p class="formp">* Password must have atleast 8 characters.</p>
                             </div>
                             <button type="submit" class="btn btn-primary formbtn" id="formbtn">Submit</button>
                             <hr>
