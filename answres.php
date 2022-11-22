@@ -24,8 +24,7 @@
         background-color:#F6F6F6;
         border-radius: 4px;
         margin: 40px 0px;
-        box-shadow: 13px 13px 24px #bcbcbc,
-                -13px -13px 24px #e3e3e3;
+        box-shadow: 7px 7px 10px #a8a8a8, -7px -7px 10px #c0bfbf !important;
         font-size: 14px !important;
        
     }
@@ -39,9 +38,7 @@
         padding: 30px;
         background-color: #F6F6F6;
         margin: 40px 0px;
-        box-shadow: 13px 13px 24px #bcbcbc,
-                -13px -13px 24px #e3e3e3;
-       
+        box-shadow: 7px 7px 10px #a8a8a8, -7px -7px 10px #c0bfbf !important;
    }
    .qdiv {
        /* margin: 10px 80px;*/
@@ -51,8 +48,12 @@
         border-radius: 3px;
         margin: 28px 0px;
         background-color: #F6F6F6;
-        box-shadow: 13px 13px 24px #bcbcbc,
-                -13px -13px 24px #e3e3e3;
+        min-height: 300px !important;
+        box-shadow: 7px 7px 10px #a8a8a8, -7px -7px 10px #c0bfbf !important;
+        background-image: url('questionbackground.gif') !important;
+        background-size: 100% 90% !important;
+        background-repeat: no-repeat !important;
+        background-blend-mode: lighten;
     }
     .img{
         width: 13%;
@@ -122,7 +123,6 @@
         <h1 class="display-4"><?php echo $title ?></h1>
         <pre class="lead"><?php echo $desc ?></pre>
         <hr class="my-4">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
     </div>
 
     <?php

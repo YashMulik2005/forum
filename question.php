@@ -25,9 +25,7 @@
         background-color:#F6F6F6;
         border-radius: 4px;
         margin: 40px 0px;
-        box-shadow: 13px 13px 24px #bcbcbc,
-                -13px -13px 24px #e3e3e3;
-       
+        box-shadow: 7px 7px 10px #a8a8a8, -7px -7px 10px #c0bfbf !important;
     }
     .btn-primary:hover{
         background-color:#3e6a9c !important;
@@ -39,9 +37,7 @@
         padding: 30px;
         background-color: #F6F6F6;
         margin: 40px 0px;
-        box-shadow: 13px 13px 24px #bcbcbc,
-                -13px -13px 24px #e3e3e3;
-       
+        box-shadow: 7px 7px 10px #a8a8a8, -7px -7px 10px #c0bfbf !important;
    }
    .form_p{
         text-align: center;
@@ -54,9 +50,13 @@
         width: 100%;
         border-radius: 3px;
         margin: 28px 0px;
+        min-height: 300px !important;
         background-color: #F6F6F6;
-        box-shadow: 13px 13px 24px #bcbcbc,
-                -13px -13px 24px #e3e3e3;
+        box-shadow: 7px 7px 10px #a8a8a8, -7px -7px 10px #c0bfbf !important;
+        background-image: url('questionbackground.gif') !important;
+        background-size: 100% 90% !important;
+        background-repeat: no-repeat !important;
+        background-blend-mode: lighten;
     }
     .img{
         width: 13%;
@@ -65,7 +65,7 @@
         align-items: center;
         justify-content: center;
        /* border: 2px solid black;*/
-        border-right:2px soild black;
+        border-right:2px soild black !important;
     }
     .text{
         width: 87%;

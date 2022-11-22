@@ -78,7 +78,7 @@
             <a class="nav-link active" aria-current="page" href="home.php"><b>Home</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><b>About</b></a>
+            <a class="nav-link" href="about.php"><b>About</b></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><b>Contact</b></a>
