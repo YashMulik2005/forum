@@ -22,7 +22,7 @@
         /* background: rgba(243, 245, 247, 0.3)!important; */
         padding: 30px;
         background-color:#F6F6F6;
-        border-radius: 4px;
+        border-radius: 8px;
         margin: 40px 0px;
         box-shadow: 7px 7px 10px #a8a8a8, -7px -7px 10px #c0bfbf !important;
         font-size: 14px !important;
@@ -38,6 +38,7 @@
         padding: 30px;
         background-color: #F6F6F6;
         margin: 40px 0px;
+        border-radius: 8px;
         box-shadow: 7px 7px 10px #a8a8a8, -7px -7px 10px #c0bfbf !important;
    }
    .qdiv {
@@ -45,7 +46,7 @@
         padding: 10px;
         display: flex;
         width: 100%;
-        border-radius: 3px;
+        border-radius: 8px;
         margin: 28px 0px;
         background-color: #F6F6F6;
         min-height: 300px !important;
@@ -154,7 +155,7 @@ else{
 ?>
 
     <?php
-        $sql="SELECT * FROM `answers` WHERE `ques_id` = $que_id";
+        $sql="SELECT * FROM `answers` WHERE `ques_id` = $que_id order by `time` desc";
         $result=mysqli_query($connect,$sql);
         $num=mysqli_num_rows($result);
         //echo $_SESSION['user_id'];
@@ -163,6 +164,7 @@ else{
         while($row=mysqli_fetch_assoc($result)){
             $description=$row['text'];
             $time=$row['time'];
+            $newtime=substr($time,0,10);
             $user_id=$row['user_id'];
             $sql2="SELECT * FROM `login_system` WHERE `user_id` = $user_id";
             $result1=mysqli_query($connect,$sql2);
@@ -177,7 +179,7 @@ else{
                         <p><b>YOU</b></p>
                         </div>
                         <div class="text">
-                        <p><b>POSTED AT </b>'. $time .'</p>
+                        <p><b>POSTED AT :</b>'. $newtime .'</p>
                         <hr>
                         <pre>'. $description .'</pre>
                         </div>
@@ -190,7 +192,7 @@ else{
                     <p><b>'.$name.'</b></p>
                     </div>
                     <div class="text">
-                    <p><b>POSTED AT </b>'. $time .'</p>
+                    <p><b>POSTED AT :</b>'. $newtime .'</p>
                     <hr>
                     <pre>'. $description .'</pre>
                     </div>
@@ -204,7 +206,7 @@ else{
                     <p><b>'.$name.'</b></p>
                     </div>
                     <div class="text">
-                    <p><b>POSTED AT </b>'. $time .'</p>
+                    <p><b>POSTED AT :</b>'. $newtime .'</p>
                     <hr>
                     <pre>'. $description .'</pre>
                     </div>

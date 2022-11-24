@@ -54,10 +54,23 @@
 
       margin-bottom: 0px !important;
     }
+    .logo {
+    width: 209px !important;
+    height: 113px !important;
+    margin-bottom: -60px !important;
+    margin-top: -55px !important;
+}
+  .mr{
+    margin-top: 8px !important;
+  }
+.navbar-toggler{}
     @media(max-width:1000px){
       .navdiv{
+        right:0px;
         position: static;
-
+      }
+      .logo {
+        margin-left: -30px !important;
       }
     }
     </style>
@@ -68,20 +81,20 @@
   <?php
       echo '<nav class="navbar navbar-expand-lg navbar-light nav1">
   <div class="container-fluid">
-  <a class="navbar-brand" href="#"><img src="logo.png" alt="" class="logo"></a>
+  <a class="navbar-brand" href="#"><img src="newlogo.png" alt="" class="logo"></a>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
   </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="home.php"><b>Home</b></a>
+            <a class="nav-link active mr" aria-current="page" href="home.php"><b>Home</b></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="about.php"><b>About</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><b>Contact</b></a>
+            <a class="nav-link" href="contact.php"><b>Contact</b></a>
           </li>
         </ul>
         </div>';

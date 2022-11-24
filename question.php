@@ -23,9 +23,13 @@
         /* background: rgba(243, 245, 247, 0.3)!important; */
         padding: 30px;
         background-color:#F6F6F6;
-        border-radius: 4px;
+        border-radius: 8px;
         margin: 40px 0px;
         box-shadow: 7px 7px 10px #a8a8a8, -7px -7px 10px #c0bfbf !important;
+        background-image: url('form.gif') !important;
+        background-size: 100% 90% !important;
+        background-repeat: no-repeat !important;
+        background-blend-mode: lighten;
     }
     .btn-primary:hover{
         background-color:#3e6a9c !important;
@@ -36,6 +40,7 @@
    .main{
         padding: 30px;
         background-color: #F6F6F6;
+        border-radius: 8px;
         margin: 40px 0px;
         box-shadow: 7px 7px 10px #a8a8a8, -7px -7px 10px #c0bfbf !important;
    }
@@ -48,7 +53,7 @@
         padding: 10px;
         display: flex;
         width: 100%;
-        border-radius: 3px;
+        border-radius: 8px;
         margin: 28px 0px;
         min-height: 300px !important;
         background-color: #F6F6F6;
@@ -191,7 +196,7 @@
     ?>
 
     <?php
-        $sql="SELECT * FROM `questions` WHERE `cat_id` = $cat_id";
+        $sql="SELECT * FROM `questions` WHERE `cat_id` = $cat_id order by `time` desc";
         $result=mysqli_query($connect,$sql);
         $num=mysqli_num_rows($result);
         //echo $_SESSION['user_id'];
@@ -204,6 +209,7 @@
             $description=$row['qdescription'];
             $time=$row['time'];
             $user_id=$row['user_id'];
+            $newtime=substr($time,0,10);
 
             $sql1="SELECT * FROM `login_system` WHERE `user_id` = $user_id";
             $result1=mysqli_query($connect,$sql1);
@@ -217,7 +223,7 @@
               <p><b>YOU</b></p>
             </div>
             <div class="text">
-                <p><b>POSTED AT </b>'.$time.'</p>
+                <p><b>POSTED AT :</b>'.$newtime.'</p>
                 <hr>
               <a href="answres.php?qus_id='. $que_id .' "><h3>'. $tittle .'</h3></a>
               <pre>'. $description .'</pre>
@@ -236,7 +242,7 @@
                   <p><b>'.$name.'</b></p>
                 </div>
                 <div class="text">
-                    <p><b>POSTED AT </b>'.$time.'</p>
+                    <p><b>POSTED AT :</b>'.$newtime.'</p>
                     <hr>
                   <a href="answres.php?qus_id='. $que_id .' "><h3>'. $tittle .'</h3></a>
                   <pre>'. $description .'</pre>
@@ -256,7 +262,7 @@
               <p><b>'.$name.'</b></p>
             </div>
             <div class="text">
-                <p><b>POSTED AT </b>'.$time.'</p>
+                <p><b>POSTED AT :</b>'.$newtime.'</p>
                 <hr>
               <a href="answres.php?qus_id='. $que_id .' "><h3>'. $tittle .'</h3></a>
               <pre>'. $description .'</pre>

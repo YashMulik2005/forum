@@ -55,14 +55,10 @@
         }
 
         .logo {
-            width: 186px;
-            height: 174px;
-            margin-bottom: -65px;
-            margin-top: -64px;
-        }
-
-        .navbardiv a {
-            color: black !important;
+            width: 209px;
+            height: 113px;
+            margin-bottom: -60px;
+            margin-top: -55px;
         }
 
         .user {
@@ -73,8 +69,8 @@
             display: flex;
             justify-content: center;
             background-color: #87bfff;
-            margin: 10px 0px;
-            margin-top: 0px !important;
+            margin: 15px 0px;
+            /*margin-top: 10px !important;*/
         }
 
         .text {
