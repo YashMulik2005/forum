@@ -90,11 +90,11 @@
                         <form action="login_handle.php" method="post">
                             <div class="mb-3">
                                 <input type="text" class="form-control" id="username" aria-describedby="emailHelp"
-                                    name="username" placeholder="USERNAME">
+                                    name="username" placeholder="USERNAME" required>
                             </div> 
                             <div class="mb-3">
                                 <input type="password" class="form-control" id="exampleInputPassword1" name="password"
-                                placeholder="PASSWORD">
+                                placeholder="PASSWORD" required>
                                 <p class="formp">* Password must have atleast 8 characters.</p>
                             </div>
                             <button type="submit" class="btn btn-primary formbtn" id="formbtn">Submit</button>
@@ -118,4 +118,3 @@
 </body>
 
 </html>
-<!-- Modal -->

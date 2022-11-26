@@ -16,8 +16,8 @@
                 $_SESSION['user_id']=$id;
                 $_SESSION['username']=$name;
             }
-            header("location: home.php?logedin=true");
+            header("location: index.php?logedin=true");
         }
-        header("location: home.php");
+        header("location: index.php");
     }
 ?>

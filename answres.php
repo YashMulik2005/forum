@@ -9,7 +9,6 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="home.css">
     <link href='https://fonts.googleapis.com/css?family=Asul' rel='stylesheet' />
     <style>
      body{
@@ -25,8 +24,16 @@
         border-radius: 8px;
         margin: 40px 0px;
         box-shadow: 7px 7px 10px #a8a8a8, -7px -7px 10px #c0bfbf !important;
-        font-size: 14px !important;
-       
+        background-image: url('newjambotron.gif') !important;
+        background-size: 100% 90% !important;
+        background-repeat: no-repeat !important;
+        background-blend-mode: lighten;
+    }
+    .lead{
+        font-size: 16px !important;
+    }
+    .ti{
+        font-size: 44px !important;
     }
     .btn-primary:hover{
         background-color:#3e6a9c !important;
@@ -90,6 +97,12 @@
     .form_p{
         text-align: center;
    }
+   textarea{
+        background-color: #F6F6F6 !important;
+    }
+    textarea:focus{
+        background-color: #F6F6F6 !important;
+    }
     @media(max-width:900px) {
         body{
             margin: 0px 15px !important;
@@ -121,7 +134,7 @@
         $desc=$row['qdescription'];
     ?>
     <div class="jumbotron">
-        <h1 class="display-4"><?php echo $title ?></h1>
+        <h1 class="display-4 ti"><?php echo $title ?></h1>
         <pre class="lead"><?php echo $desc ?></pre>
         <hr class="my-4">
     </div>
@@ -143,7 +156,7 @@
         <form action=" '. $_SERVER["REQUEST_URI"] .' " method="post">
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label"><b>ANSWER</B></label>
-                <textarea class="form-control" id="qdescription" rows="3" name="adescription"></textarea>
+                <textarea class="form-control" id="qdescription" rows="3" name="adescription" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

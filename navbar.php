@@ -1,160 +1,156 @@
 <?php
   session_start();
 ?>
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="home.css">
-    <link href='https://fonts.googleapis.com/css?family=Asul' rel='stylesheet' />
-    <style>
-      body{
-        font-family:Asul !important;
-      }
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>Document</title>
+  <style>
+      
+    .logo {
+      width: 209px !important;
+      height: 113px !important;
+      margin-bottom: -60px !important;
+      margin-top: -55px !important;
+    }
     .user {
-        color: black;
-        text-decoration: none;
-        font-size: 18px;
+      color: black;
+      text-decoration: none;
+      font-size: 18px;
     }
-    .btn-primary:hover{
-      background-color:#3e6a9c !important;
-            transform: scale(1.1);
-            transition: 0.5s;
-            text-decoration: underline;
-        }
-
     .ulogo {
-        width: 50px;
-        height: 50px;
+      width: 50px;
+      height: 50px;
     }
-    .navdiv{
-      position: absolute;
-      right:10px;
+    .btn-primary:hover {
+      background-color: #3e6a9c !important;
+      transform: scale(1.1);
+      transition: 0.5s;
+      text-decoration: underline;
     }
-    .btn{
-      background-color: #1E56A0 !important;
-    }
-    .nav1{
+    .nav1 {
       background-color: #D6E4F0 !important;
     }
-    .nav1 a{
-        color: #163172 !important;
-    }
-    .navbar a:hover{
-        text-decoration: underline;
-    }
-    .alert{
 
-      margin-bottom: 0px !important;
+    .nav1 a {
+      color: #163172 !important;
     }
-    .logo {
-    width: 209px !important;
-    height: 113px !important;
-    margin-bottom: -60px !important;
-    margin-top: -55px !important;
-}
-  .mr{
-    margin-top: 8px !important;
-  }
-.navbar-toggler{}
-    @media(max-width:1000px){
-      .navdiv{
-        right:0px;
-        position: static;
-      }
-      .logo {
-        margin-left: -30px !important;
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+    .canvas{
+      background-color: #D6E4F0 !important;
+    }
+    .logocan{
+      width: 209px !important;
+      height: 113px !important;
+      margin-bottom: -60px !important;
+      margin-top: -55px !important;
+      margin-left:-40px;
+    }
+    @media(max-width:980px) {
+      .logo{
+        display: none;
       }
     }
     </style>
-    <title>Hello, world!</title>
 </head>
 
 <body>
   <?php
-      echo '<nav class="navbar navbar-expand-lg navbar-light nav1">
+  echo'
+<nav class="navbar nav1">
   <div class="container-fluid">
-  <a class="navbar-brand" href="#"><img src="newlogo.png" alt="" class="logo"></a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-  </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-            <a class="nav-link active mr" aria-current="page" href="home.php"><b>Home</b></a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+    <span class="navbar-toggler-icon"></span>
+    </button>';
+  if(!isset($_SESSION['loggedin'])){
+    echo'
+    <div class="accountbtn">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">login</button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signupModal">signup</button>
+    </div>';
+  }
+  else{
+    $user_id=$_SESSION['user_id'];
+    echo'
+    <a class="navbar-brand" href="profile.php?user_id='.$user_id.'" class="user"><img src="user_logo.png" alt="" class="ulogo"><strong> '.$_SESSION['username'].'</strong></a>';
+  }
+  echo'
+    <div class="offcanvas offcanvas-end canvas" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><a class="navbar-brand" href="#"><img src="newlogo.png" alt="" class="logocan"></a></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+              <a class="nav-link active mr" aria-current="page" href="index.php"><b>Home</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.php"><b>About</b></a>
+              <a class="nav-link" href="about.php"><b>About</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.php"><b>Contact</b></a>
-          </li>
-        </ul>
-        </div>';
-        // session_start();
-      if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
-        $user_id=$_SESSION['user_id'];
-       echo' <div class="collapse navbar-collapse" id="navbarSupportedContent">
-       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 navdiv">
-         <li class="nav-item">
-         <a href="profile.php?user_id='.$user_id.'" class="user"><img src="user_logo.png" alt="" class="ulogo"><strong> '.$_SESSION['username'].'</strong></a>
-         </li>
-       </ul>
-      </div>';
-      }
-      else{
+              <a class="nav-link" href="contact.php"><b>Contact</b></a>
+          </li>';
+          if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
+            $user_id=$_SESSION['user_id'];
+           echo' 
+           <ul class="navbar-nav navdiv">
+             <li class="nav-item">
+             <a href="profile.php?user_id='.$user_id.'" class="user"><img src="user_logo.png" alt="" class="ulogo"><strong> '.$_SESSION['username'].'</strong></a>
+             </li>
+           </ul>';
+        }
+        
         echo'
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-       <ul class="navbar-nav me-auto mb-2 mb-lg-0 navdiv">
-         <li class="nav-item">
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">login</button>
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signupModal">signup</button> 
-         </li>
-       </ul>
-      </div>';
-      }
-    echo '<hr>
+      </ul>
+      </div>
     </div>
-    </nav>';
-?>
-    <?php
+   </div>
+</nav>';
+
+
 include 'login.php';
-include 'signup.php';
+include 'signup.php'; 
 
 if(isset($_GET['signupsucess']) && $_GET['signupsucess']=="true"){
-  echo'
-  <div class="alert alert-success alert-dismissible fade show" role="alert">
-      <strong>suceessful!!</strong> Account created suceessfully, now you can login.
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>';
+echo'
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+   <strong>suceessful!!</strong> Account created suceessfully, now you can login.
+   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+   </div>';
 }
 else if(isset($_GET['Passwordlength']) && $_GET['Passwordlength']=="true"){
 echo'
-  <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      <strong>Unsuceessful!!</strong> Password must have atleast 8 characters.
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>';
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+   <strong>Unsuceessful!!</strong> Password must have atleast 8 characters.
+   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+   </div>';
 }
 else if(isset($_GET['signupsucess']) && $_GET['signupsucess']=="false"){
-  echo'
-  <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      <strong>Unsuceessful!!</strong> Username already exist.
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>';
+echo'
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+   <strong>Unsuceessful!!</strong> Username already exist.
+   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+   </div>';
 }
-?>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
-    <script src="navbar.js"></script>
 
+?>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

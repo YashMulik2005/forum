@@ -16,7 +16,7 @@
         font-size: 18px;
     }
          .container1 {
-        margin: 35px;
+        margin: 0px 10px;
         display: flex;
         height: 350px;
         justify-content: center;
@@ -24,7 +24,7 @@
     }
 
     .container2 {
-        margin: 35px;
+        margin: 0px 10px;
         display: flex;
         height: 350px;
         justify-content: center;
@@ -79,12 +79,14 @@
             width: 100%;
             text-align: justify;
             margin-right: 0px;
+            padding: 20px;
         }
 
         .child10f2 {
             width: 100%;
             text-align: justify;
             margin-left: 0px;
+            padding: 20px;
         }
 
         .img1,
@@ -99,6 +101,7 @@
         .container1 {
             flex-direction: column-reverse;
             height: 600px;
+            margin-top: -50px !important;
         }
 
         .container2 {

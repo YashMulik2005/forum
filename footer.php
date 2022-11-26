@@ -44,9 +44,9 @@
       </a>
   
       <ul class="nav col-md-4 justify-content-end">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><b>Home</b></a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><b>About</b></a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><b>Contact</b></a></li>
+        <li class="nav-item"><a href="index.php" class="nav-link px-2 text-muted"><b>Home</b></a></li>
+        <li class="nav-item"><a href="about.php" class="nav-link px-2 text-muted"><b>About</b></a></li>
+        <li class="nav-item"><a href="contact.php" class="nav-link px-2 text-muted"><b>Contact</b></a></li>
         <li class="nav-item"><a href="https://www.instagram.com/yash_mulik_95/" target="_blank" class="nav-link px-2 text-muted"><i class="icon1 fa-brands fa-instagram"></i></a></li>
         <li class="nav-item"><a href="https://www.linkedin.com/in/yash-mulik-6727b2246/" target="_blank" class="nav-link px-2 text-muted"><i class="icon1 fa-brands fa-linkedin"></i></i></a></li>
         <li class="nav-item"><a href="#" target="_blank" class="nav-link px-2 text-muted"><i class="icon1 fa-brands fa-twitter"></i></i></i></a></li>

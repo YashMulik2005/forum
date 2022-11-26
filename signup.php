@@ -61,28 +61,29 @@
                         <div class="box">
                             <div class="mb-3 fname">
                                 <input type="text" class="form-control" id="fname" aria-describedby="emailHelp"
-                                    name="fname" placeholder="First name">
+                                    name="fname" placeholder="First name" required>
                             </div>
                             <div class="mb-3 lname">
                                 <input type="text" class="form-control" id="lname" aria-describedby="emailHelp"
-                                    name="lname" placeholder="Last name">
+                                    name="lname" placeholder="Last name" required>
                             </div>
                         </div>
                         <div class="mb-3">
                             <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" name="email" placeholder="Email">
+                                aria-describedby="emailHelp" name="email" placeholder="Email" required>
                         </div>
                         <div class="mb-3">
                             <input type="text" class="form-control" id="username" aria-describedby="emailHelp"
-                                name="username" placeholder="Username">
+                                name="username" placeholder="Username" required>
                         </div>
                         <div class="mb-3">
                             <input type="password" class="form-control" id="exampleInputPassword1" name="password"
-                                placeholder="Password">
+                                placeholder="Password" required>
                                 <p class="formp">* Password must have atleast 8 characters.</p>
                         </div>
                         <button type="submit" class="btn btn-primary formbtn" id="formbtn">Submit</button>
-                        <!-- <p id="text2">or</p> -->
+                        <hr>
+                        <p id="text2">or</p>
                         <i class="icon fa-brands fa-google"></i>
                         <i class="icon fa-brands fa-facebook"></i>
                         <i class="icon fa-brands fa-github"></i>

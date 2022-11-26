@@ -20,6 +20,7 @@
             display: flex;
             margin: 80px 130px;
             /* border: 2px solid black; */
+            border-radius: 6px !important;
             background-color: #F6F6F6 !important;
             box-shadow: 7px 7px 10px #a8a8a8, -7px -7px 10px #c0bfbf !important;
             padding: 30px;
@@ -64,7 +65,7 @@
         }
         @media(max-width:680px){
             .main{
-                margin: 20px 20px;
+                margin: 35px 20px;
                 padding: 20px;
             }
             .text{
@@ -108,7 +109,7 @@
        echo'
        <div class="main">
            <div class="img">
-               <img src="img1.jpg" alt="">
+               <img src="contact.png" alt="">
            </div>
            <div class="text">
                <form action="contact.php" method="post">

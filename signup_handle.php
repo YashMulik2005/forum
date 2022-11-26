@@ -12,7 +12,7 @@
         $num=mysqli_num_rows($result);
         if($num>0){
             echo "username exist";
-            header("location:home.php?signupsucess=false");
+            header("location:index.php?signupsucess=false");
         }
         else{
             $hash=password_hash($pass,PASSWORD_DEFAULT);
@@ -20,12 +20,12 @@
                 $sql="INSERT INTO `login_system` (`fname`, `lname`, `username`, `email`, `password`, `time`) VALUES ('$firstn', '$lastn', '$name', '$mail', '$hash', current_timestamp())";
                 $result=mysqli_query($connect,$sql);
                 if($result){
-                    header("location:home.php?signupsucess=true");
+                    header("location:index.php?signupsucess=true");
                     exit();
                 }
             }
             else{
-                header("location:home.php?Passwordlength=true");
+                header("location:index.php?Passwordlength=true");
             }
         }
     }
